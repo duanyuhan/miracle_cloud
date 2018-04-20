@@ -1,0 +1,6 @@
+rootProject.name = 'miracle_cloud'
+include 'miracle_bean'
+include 'miracle_service'
+include 'miracle-util'
+include 'miracle-mq'
+

@@ -1,0 +1,17 @@
+.gradle/
+.idea/
+*.iml
+*.log
+*.info
+*/out/
+*/build/
+**/.DS_Store
+logs/
+log/
+**/*.iml
+1.xlsx
+spring-boot-demo/
+gradle/
+gradlew
+gradlew.bat
+build.sh

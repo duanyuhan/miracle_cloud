@@ -1,0 +1,51 @@
+subprojects {
+
+    group 'com.miralce'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+
+    [compileJava, compileTestJava].each() {
+        it.options.encoding = "UTF-8"
+    }
+
+    repositories {
+        mavenLocal()
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+
+    }
+
+    configurations {
+        all*.exclude group: "org.slf4j", module: "slf4j-log4j12"
+        all*.exclude group: "ch.qos.logback", module: "logback-classic"
+        all*.exclude group: "org.slf4j", module: "log4j-over-slf4j"
+        all*.exclude group: "commons-logging", module: "commons-logging"
+    }
+
+    dependencies{
+        compile 'org.apache.logging.log4j:log4j-api:2.8.2'
+        compile 'org.apache.logging.log4j:log4j-core:2.8.2'
+        compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.8.2'
+        compile 'org.apache.logging.log4j:log4j-jcl:2.8.2'
+
+        compile "org.projectlombok:lombok:1.16.12"
+        compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+        compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.2.Final'
+
+
+        compile 'com.timgroup:java-statsd-client:3.1.0'
+        compile 'com.alibaba:fastjson:1.2.29'
+        compile 'org.apache.commons:commons-lang3:3.7'
+        compile 'com.google.code.gson:gson:2.8.2'
+        compile 'org.postgresql:postgresql:9.3-1100-jdbc41'
+        compile 'mysql:mysql-connector-java:6.0.5'
+        compile 'tk.mybatis:mapper:3.4.6'
+    }
+}

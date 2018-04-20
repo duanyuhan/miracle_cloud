@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern="%d{ABSOLUTE} &lt;%c#%method&gt; %5p [%t]: %m%n"/>
+        </Console>
+
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout charset="UTF-8" pattern="%d{ABSOLUTE} &lt;%c#%method&gt; %5p [%t]: %m%n"/>
+        </Console>
+
+        <RollingRandomAccessFile name="SERVICE_LOG_FILE" fileName="logs/miracle-service.log"
+                                 filePattern="logs/$${date:yyyyMM}/miralce-miracle_%d{yyyyMMdd}_%i.log.gz">
+            <PatternLayout charset="UTF-8">
+                <pattern>
+                    {"datatype":0,"business":"charge","module":"charge-service","currentTime":"%d","level":"%-5p","method":"%method","thread":"%t","interface":"%c","data":"%enc{%m}{JSON}"}%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="30 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="40"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="SERVICE_LOG_FILE"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

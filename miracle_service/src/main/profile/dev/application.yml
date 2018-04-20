@@ -1,0 +1,9 @@
+server:
+  port: 6001
+
+logging:
+  config: classpath:log4j2.xml
+
+eureka:
+  client:
+    allow-redirects: false
