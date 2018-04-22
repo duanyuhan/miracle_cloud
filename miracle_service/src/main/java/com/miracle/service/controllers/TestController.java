@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @RequestMapping(path = "/test", method = RequestMethod.GET)
     public String test() {
-        return "miracle";
+        return "miracle is naonao";
     }
 }

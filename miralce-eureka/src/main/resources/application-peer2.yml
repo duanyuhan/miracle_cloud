@@ -1,0 +1,19 @@
+server:
+  port: 6202
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6201/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  application:
+    name: miralce-eureka-server
+
+logging:
+  config: classpath:log4j2.xml

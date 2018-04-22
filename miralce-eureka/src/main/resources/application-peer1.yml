@@ -1,0 +1,19 @@
+server:
+  port: 6201
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6202/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  application:
+    name: miracle-eureka-server
+
+logging:
+  config: classpath:log4j2.xml
