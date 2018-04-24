@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://naonaobuyaonao:naonaodashuaige@127.0.0.1:6201/eureka,http://naonaobuyaonao:naonaodashuaige@127.0.0.1:6202/eureka
+  instance:
+    prefer-ip-address: false
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+logging:
+  config: classpath:log4j2.xml
+
+management:
+  security:
+    enabled: false

@@ -32,7 +32,9 @@ dependencyManagement {
 }
 
 dependencies {
-    compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+    compile'org.springframework.cloud:spring-cloud-starter-eureka-server'
+    compile 'org.springframework.boot:spring-boot-starter-security:2.0.1.RELEASE'
+
 }
 
 mainClassName="com.miralcle.eureka.MiracleEurekaApplication1"

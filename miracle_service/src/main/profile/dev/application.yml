@@ -7,3 +7,6 @@ logging:
 eureka:
   client:
     allow-redirects: false
+spring:
+  application:
+    name: miracle-service

@@ -17,3 +17,11 @@ spring:
 
 logging:
   config: classpath:log4j2.xml
+
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: naonaobuyaonao
+    password: naonaodashuaige
