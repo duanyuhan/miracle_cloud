@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +46,7 @@ public class Main extends Application {
         pane.add(nameLabel, 2, 1);
         pane.add(numLabel, 3, 1);
         pane.add(CourseLabel, 4, 1);
-        List<Course> courseList = new ArrayList<Course>();
+        final List<Course> courseList = new ArrayList<Course>();
         try {
             connection.preStmt = connection.connect.prepareStatement(queryString);
             connection.rSet = connection.preStmt.executeQuery();
@@ -128,8 +130,19 @@ public class Main extends Application {
                 //primaryStage.close();
             }
         }).build();
-
+        Button exportButton = ButtonBuilder.create().text("export").onAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                try {
+                    ExportUtil.export("course.xml", courseList);
+                } catch (ParserConfigurationException e1) {
+                    e1.printStackTrace();
+                } catch (TransformerException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }).build();
         pane.add(addButton, 1, size + 2);
+        pane.add(exportButton, 1, size+3);
         Scene scene1 = new Scene(pane);
         primaryStage.setTitle("list of course");
         primaryStage.setScene(scene1);

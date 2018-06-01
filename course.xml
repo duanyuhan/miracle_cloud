@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><courses>
+<course id="[courseId: null]">
+<courseId/>
+<courseName>qwe</courseName>
+<courseNum>12</courseNum>
+<courseTeacher>Tom</courseTeacher>
+</course>
+<course id="[courseId: null]">
+<courseId/>
+<courseName>Math</courseName>
+<courseNum>24</courseNum>
+<courseTeacher>marry</courseTeacher>
+</course>
+<course id="[courseId: null]">
+<courseId/>
+<courseName>Math</courseName>
+<courseNum>15</courseNum>
+<courseTeacher>marry</courseTeacher>
+</course>
+<course id="[courseId: null]">
+<courseId/>
+<courseName>M</courseName>
+<courseNum>1</courseNum>
+<courseTeacher>Green</courseTeacher>
+</course>
+<course id="[courseId: null]">
+<courseId/>
+<courseName>S</courseName>
+<courseNum>8</courseNum>
+<courseTeacher>HanMei</courseTeacher>
+</course>
+</courses>
